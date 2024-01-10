@@ -25,19 +25,31 @@ export const Default: Story = {
     socialNetworks: [
       {
         name: 'twitter',
-        link: 'https://twitter.com',
+        link: {
+          _type: 'link',
+          current: 'https://twitter.com',
+        }
       },
       {
         name: 'facebook',
-        link: 'https://facebook.com',
+        link: {
+          _type: 'link',
+          current: 'https://facebook.com',
+        }
       },
       {
         name: 'instagram',
-        link: 'https://instagram.com',
+        link: {
+          _type: 'link',
+          current: 'https://instagram.com',
+        }
       },
       {
         name: 'youtube',
-        link: 'https://youtube.com',
+        link: {
+          _type: 'link',
+          current: 'https://youtube.com',
+        }
       },
     ],
     socialNetworksTitle: 'Get connected with us on social networks:',

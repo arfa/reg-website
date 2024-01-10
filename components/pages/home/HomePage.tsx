@@ -10,7 +10,6 @@ import BlockBenefits from '@/components/shared/BlockBenefits'
 import Bullet from '@/components/shared/Bullet'
 import { CarouselReadMore } from '@/components/shared/CarouselReadMore'
 import { SectionBoost } from '@/components/shared/SectionBoost'
-import { SectionComingSoon } from '@/components/shared/SectionComingSoon'
 import { SectionHero } from '@/components/shared/SectionHero'
 import { Stats } from '@/components/shared/Stats'
 import { StatsBlock } from '@/components/shared/StatsBlock'
@@ -42,17 +41,6 @@ export function HomePage({ data,settings, encodeDataAttribute }: HomePageProps) 
         },
       }
     }) ?? []
-
-  if(settings?.comingSoonProgress) {
-    return (
-      <SectionComingSoon
-        settings={settings}
-        video={sections[0]?.videoURL}
-        title={sections[0]?.title}
-        description={toPlainText(sections[0]?.description || []) || ''}
-      />
-    )
-  }
 
   return (
     <div className="space-y-20">

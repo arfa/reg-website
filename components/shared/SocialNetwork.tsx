@@ -20,7 +20,7 @@ export function SocialNetwork({
   return (
     <Button
       variant="link"
-      className={`${className} items-center justify-center w-6 h-6 border rounded-md group text-green-200 hover:bg-accent hover:text-accent-foreground sm:flex border-green-200 `}
+      className={`${className} items-center justify-center w-6 h-6 border rounded-md group text-green-400 hover:bg-accent hover:text-accent-foreground sm:flex border-green-400 `}
     >
       <Link href={link || ''} target="_blank" rel="noopener noreferrer">
         {Icon && (
