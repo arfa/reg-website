@@ -150,6 +150,66 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'comingSoonTitle',
+      title: 'Coming Soon Title',
+      description: 'This field is the title of coming soon page.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'Url',
+                  },
+                ],
+              },
+            ],
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: 'comingSoonDescription',
+      title: 'Coming Soon Description',
+      description: 'This field is the description of coming soon page.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'Url',
+                  },
+                ],
+              },
+            ],
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: 'comingSoonProgress',
+      title: 'Coming Soon Progress',
+      description: 'This field is the progress of coming soon page.',
+      type: 'number',
+    }),
   ],
   preview: {
     prepare() {

@@ -62,6 +62,7 @@ export interface CustomBlock {
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   title?: string
+  overview?: PortableTextBlock[]
   sections?: CustomBlock[]
 }
 
@@ -106,6 +107,9 @@ export interface SettingsPayload {
   brand?: string
   slogan?: string
   footer?: PortableTextBlock[]
+  comingSoonTitle?: PortableTextBlock[]
+  comingSoonDescription?: PortableTextBlock[]
+  comingSoonProgress?: number
   menuItems?: MenuItem[]
   socialNetworks?: {
     title?: string
@@ -125,7 +129,7 @@ export interface Author {
 
 export type SocialProfile = {
   name: string
-  link: string
+  link: SanityLink
 }
 
 export interface LinkItem {

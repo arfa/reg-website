@@ -158,6 +158,9 @@ export const settingsQuery = groq`
         type,
       }
     },
+    comingSoonTitle,
+    comingSoonDescription,
+    comingSoonProgress,
     ogImage,
   }
 `

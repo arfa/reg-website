@@ -10,11 +10,12 @@ import BlockBenefits from '@/components/shared/BlockBenefits'
 import Bullet from '@/components/shared/Bullet'
 import { CarouselReadMore } from '@/components/shared/CarouselReadMore'
 import { SectionBoost } from '@/components/shared/SectionBoost'
+import { SectionComingSoon } from '@/components/shared/SectionComingSoon'
 import { SectionHero } from '@/components/shared/SectionHero'
 import { Stats } from '@/components/shared/Stats'
 import { StatsBlock } from '@/components/shared/StatsBlock'
 import { urlForImage } from '@/sanity/lib/utils'
-import type { HomePagePayload } from '@/types'
+import type { HomePagePayload, SettingsPayload } from '@/types'
 
 import { HomePageProjects } from './HomePageProjects'
 
@@ -23,13 +24,13 @@ const height = 280
 
 export interface HomePageProps {
   data: HomePagePayload | null
+  settings: SettingsPayload | null
   encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
+export function HomePage({ data,settings, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const { sections = [] } = data ?? {}
-  console.log('sections[8] : ', sections[8])
   const testimonials =
     sections[8]?.blocks?.map((item) => {
       return {
@@ -41,6 +42,17 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
         },
       }
     }) ?? []
+
+  if(settings?.comingSoonProgress) {
+    return (
+      <SectionComingSoon
+        settings={settings}
+        video={sections[0]?.videoURL}
+        title={sections[0]?.title}
+        description={toPlainText(sections[0]?.description || []) || ''}
+      />
+    )
+  }
 
   return (
     <div className="space-y-20">
