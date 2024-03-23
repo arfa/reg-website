@@ -112,44 +112,42 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
                 />
               </>
             )}
-            {videos && (
-              <>
-                <hr className="my-6 border-b-2 border-gray-200" />
-                <div className="container mt-4">
-                  <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
-                    Videos
-                  </h2>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {videos?.map((video) => (
-                      <div
-                        key={video.url as string}
-                        className="relative w-full h-96"
-                      >
-                        <video
-                          className="absolute inset-0 w-full h-full"
-                          src={video.url as string}
-                          controls
-                        />
-                      </div>
-                    ))}
-                  </div>
+
+            <>
+              <hr className="my-6 border-b-2 border-gray-200" />
+              <div className="container mt-4">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
+                  Videos
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {videos?.map((video) => (
+                    <div
+                      key={video.url as string}
+                      className="relative w-full h-96"
+                    >
+                      <video
+                        className="absolute inset-0 w-full h-full"
+                        src={video.url as string}
+                        controls
+                      />
+                    </div>
+                  ))}
                 </div>
-              </>
-            )}
-            {certifications && (
-              <>
-                <hr className="my-6 border-b-2 border-gray-200" />
-                <GalleryImage
-                  images={
-                    certifications?.map((certification) => ({
-                      src: certification.url ?? '',
-                      alt: certification.title,
-                    })) as any
-                  }
-                  title="Certifications"
-                />
-              </>
-            )}
+              </div>
+            </>
+
+            <>
+              <hr className="my-6 border-b-2 border-gray-200" />
+              <GalleryImage
+                images={
+                  certifications?.map((certification) => ({
+                    src: certification.url ?? '',
+                    alt: certification.title,
+                  })) as any
+                }
+                title="Certifications"
+              />
+            </>
           </div>
         </div>
       </div>
