@@ -1,6 +1,7 @@
 {
   "name": "Respect Environment Group",
   "short_name": "REG",
+  "DESCRIPTION": "Respect Environment Group is a non-profit organization that is dedicated to the protection of the environment and the promotion of sustainable development.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
