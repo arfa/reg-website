@@ -38,7 +38,7 @@ export function Footer1({
 }: Footer1Props) {
   return (
     <footer
-      className={`text-center text-green-600 bg-green-100 dark:bg-green-600 dark:text-green-200 lg:text-left text-sm ${className}`}
+      className={`text-center text-green-600 bg-green-100 dark:bg-green-600 dark:text-green-200 lg:text-left text-sm mb-auto ${className}`}
     >
       {/** Social networks section */}
       <SocialNetworksList

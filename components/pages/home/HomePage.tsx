@@ -45,7 +45,9 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
     <div className="space-y-20">
       <SectionHero
         title={sections[0]?.title}
-        description={<CustomPortableText value={sections[0]?.description ?? []} />}
+        description={
+          <CustomPortableText value={sections[0]?.description ?? []} />
+        }
         blocks={
           sections[0]?.blocks
             ? sections[0]?.blocks.map(
@@ -53,7 +55,9 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   ({
                     icon: block.icon,
                     title: block.title,
-                    description: <CustomPortableText value={block.description ?? []} />,
+                    description: (
+                      <CustomPortableText value={block.description ?? []} />
+                    ),
                   }) as any,
               )
             : []
@@ -62,29 +66,29 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       />
 
       {/* Showcase posts */}
-      {sections[1] && (
-        <CarouselReadMore title={sections[1]?.title}>
-          {sections[1]?.showcasePosts?.map((post, key) => {
-            return (
-              <ProjectListItem
-                project={post}
-                odd={key % 2}
-                width={width}
-                height={height}
-                key={key}
-                className="h-full max-w-xs"
-              />
-            )
-          })}
-        </CarouselReadMore>
-      )}
+      <CarouselReadMore title={sections[1]?.title}>
+        {sections[1]?.showcasePosts?.map((post, key) => {
+          return (
+            <ProjectListItem
+              project={post}
+              odd={key % 2}
+              width={width}
+              height={height}
+              key={key}
+              className="h-full max-w-xs"
+            />
+          )
+        })}
+      </CarouselReadMore>
 
       {/* Showcase projects */}
       <HomePageProjects
         showcaseProjects={sections[2]?.showcaseProjects}
         title={sections[2]?.title}
         subtitle={sections[2]?.subtitle}
-        description={<CustomPortableText value={sections[2]?.description ?? []} />}
+        description={
+          <CustomPortableText value={sections[2]?.description ?? []} />
+        }
         coverImage={urlForImage(sections[2]?.coverImage)?.url() ?? ''}
         width={width}
         height={height}
@@ -105,7 +109,9 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       <StatsBlock
         title={sections[6]?.title}
         subtitle={sections[6]?.subtitle}
-        description={<CustomPortableText value={sections[6]?.description ?? []} />}
+        description={
+          <CustomPortableText value={sections[6]?.description ?? []} />
+        }
         video={sections[6]?.videoURL}
         stats={
           sections[6]?.blocks?.map((item) => ({
