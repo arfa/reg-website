@@ -92,3 +92,5 @@ export function CarouselReadMore({
     </section>
   )
 }
+
+export default CarouselReadMore
