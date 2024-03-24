@@ -1,4 +1,5 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
+import dynamic from 'next/dynamic'
 
 import { FormContact } from '@/components/demos/FormContact'
 import { Testimonials } from '@/components/demos/Testimonials'
@@ -12,10 +13,11 @@ import { StatsBlock } from '@/components/shared/StatsBlock'
 import { urlForImage } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
 
-import ContactMap from './ContactMap'
 import { HomePageProjects } from './HomePageProjects'
 import HomePageShowcases from './HomePageShowcases'
 import Partners from './Partners'
+
+const ContactMap = dynamic(() => import('./ContactMap'), { ssr: false })
 
 const width = 550
 const height = 280
